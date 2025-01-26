@@ -1,0 +1,48 @@
+<h2>Registraction Form</h2>
+<div>
+  <form [formGroup]="regForm" (ngSubmit)="register(regForm)">
+    <div>
+      FirstName:
+      <input
+        type="text"
+        placeholder="enter you firstname"
+        formControlName="FirstName"
+      />
+    </div>
+    <div>
+      Last Name:
+      <input
+        type="text"
+        placeholder="enter you lastname"
+        formControlName="LastName"
+      />
+    </div>
+    <div>
+      Mail Id:
+      <input
+        type="text"
+        placeholder="enter you email"
+        formControlName="Email"
+      />
+    </div>
+    <div>
+      mobile no:
+      <input
+        type="text"
+        placeholder="enter you MobileNo"
+        formControlName="MobileNo"
+      />
+    </div>
+    <div>
+      Address:
+      <input
+        type="text"
+        placeholder="enter you Address"
+        formControlName="Address"
+      />
+    </div>
+    <div>
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>

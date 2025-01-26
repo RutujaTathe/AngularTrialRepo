@@ -1,0 +1,47 @@
+<form #userdata="ngForm" (ngSubmit)="saveAllUSER()">
+  <input
+    type="text"
+    [(ngModel)]="formData.name"
+    name="name"
+    placeholder="enter your name"
+  />
+  <br /><br />
+  <input
+    type="text"
+    [(ngModel)]="formData.employeeID"
+    name="employeeID"
+    placeholder="enter your employeeID"
+  />
+  <br /><br />
+  <input
+    type="text"
+    [(ngModel)]="formData.email"
+    name="email"
+    placeholder="enter your email"
+  />
+  <br /><br />
+
+  <input
+    type="text"
+    [(ngModel)]="formData.gender"
+    name="gender"
+    placeholder="enter your gender"
+  />
+  <br /><br />
+  <input
+    type="text"
+    [(ngModel)]="formData.department"
+    name="department"
+    placeholder="enter your department"
+  />
+  <br /><br />
+  <button>Save user</button>
+</form>
+
+<p>user works!</p>
+<h1>{{ serviceVariable }}- injected using service</h1>
+<!-- <button (click)="getAllPost()">ALLPOST-Hits the API</button> -->
+<button (click)="onSubscribe()">Subscription[user]</button>
+<ul *ngFor="let todo of localVariable">
+  <li>{{ todo.todo | uppercase }}</li>
+</ul>

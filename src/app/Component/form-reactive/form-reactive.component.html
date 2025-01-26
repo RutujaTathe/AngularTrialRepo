@@ -1,0 +1,140 @@
+<form [formGroup]="reactiveform" (ngSubmit)="register(reactiveform)">
+  <div>
+    Name:
+    <input type="text" placeholder="enter your name" formControlName="Name" />
+    <small
+      *ngIf="
+        reactiveform.get('Name').invalid && reactiveform.get('Name').touched
+      "
+      >*first name is required field</small
+    >
+  </div>
+  <div>
+    Email:
+    <input type="text" placeholder="enter your Email" formControlName="Email" />
+    <small
+      *ngIf="
+        reactiveform.get('Email').invalid && reactiveform.get('Email').touched
+      "
+      >*email is required field</small
+    >
+  </div>
+  <div>
+    MobileNo:
+    <input
+      type="text"
+      placeholder="enter your MobileNo"
+      formControlName="MobileNo"
+    />
+    <small
+      *ngIf="
+        reactiveform.get('MobileNo').invalid &&
+        reactiveform.get('MobileNo').touched
+      "
+      >*MobileNo is required field</small
+    >
+  </div>
+  <div>
+    DateOfBirth:
+    <input
+      type="text"
+      placeholder="enter your DateOfBirth"
+      formControlName="DateOfBirth"
+    />
+  </div>
+  <div>
+    Gender:
+    <input
+      type="radio"
+      name="Gender"
+      value=" female"
+      formControlName="Gender"
+    />Female
+    <input
+      type="radio"
+      name="Gender"
+      vale="male"
+      formControlName="Gender"
+    />Male
+  </div>
+  <div formGroupName="Address">
+    <label>Address:</label>
+    <div>
+      city:
+      <input type="text" placeholder="enter your city" formControlName="city" />
+      <small
+        *ngIf="
+          reactiveform.get('Address.city').invalid &&
+          reactiveform.get('Address.city').touched
+        "
+        >*city is required field</small
+      >
+    </div>
+    <div>
+      postalCode:
+      <input
+        type="text"
+        placeholder="enter your postalCode"
+        formControlName="postalCode"
+      />
+    </div>
+  </div>
+  <div
+    formArrayName="skills"
+    *ngFor="
+      let control of reactiveform.get('skills')['controls'];
+      let i = index
+    "
+  >
+    <input
+      type="text"
+      placeholder="Add skill......."
+      [formControlName]="i"
+    /><br />
+    <button (click)="deleteSkill(i)">Delete</button>
+
+    <button (click)="Addskills()">Add skills</button>
+  </div>
+  <div
+    formArrayName="branch"
+    *ngFor="let branch of reactiveform.get('branch')['controls']; let i = index"
+  >
+    <input
+      type="text"
+      placeholder="Add Branch Name"
+      [formControlName]="i"
+    /><br />
+    <button (click)="DeleteSkill(i)">Delete</button>
+    <button (click)="AddSubSKill()">Add Sub-Branch</button>
+  </div>
+  <div formArrayName="experience" >
+    <div
+      *ngFor="
+        let exp of reactiveform.get('experience')['controls'];
+        let i = index
+      "
+      [formGroupName]="i"
+    >
+      <div>
+        Company:
+        <input
+          type="text"
+          placeholder="enter Company"
+          formControlName="Company"
+        />
+      </div>
+      <div>
+        Year Of Experience:
+        <input
+          type="text"
+          placeholder="year of experience"
+          formControlName="YearOfExperience"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="!reactiveform.valid">Register</button>
+  </div>
+</form>

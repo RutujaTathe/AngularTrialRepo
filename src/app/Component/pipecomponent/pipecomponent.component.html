@@ -1,0 +1,27 @@
+<p>pipecomponent works!</p>
+<p>{{ date | date | uppercase }}</p>
+<!-- <h2>{{school | uppercase}}</h2> -->
+<!-- <h2>{{details | uppercase}}</h2> -->
+<h1>{{ objectdata | json }}</h1>
+<div *ngIf="isPresent">
+  <h1>The student is present {{ name }}</h1>
+</div>
+<div *ngIf="!isPresent">
+  <h1>The student is Absent {{ name }}</h1>
+</div>
+<ul>
+  <li *ngFor="let item of a">
+    <p>{{ item }}</p>
+  </li>
+</ul>
+<div *ngSwitch="'name'">
+  <div *ngSwitchCase="'Rutuja'">
+    <p>Rutuja</p>
+  </div>
+  <div *ngSwitchCase="'Radhika'">
+    <p>radhika</p>
+  </div>
+  <div *ngSwitchDefault>
+    <p>Default case</p>
+  </div>
+</div>

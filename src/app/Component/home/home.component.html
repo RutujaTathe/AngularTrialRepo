@@ -1,0 +1,50 @@
+<h1>API CALL IN ANGULAR</h1>
+<form #userForm="ngForm" (ngSubmit)="saveUser()">
+  <input
+    type="text"
+    [(ngModel)]="formData.name"
+    name="name"
+    placeholder="enter your name"
+  />
+  <br /><br />
+
+  <input
+    type="Email"
+    [(ngModel)]="formData.email"
+    name="email"
+    placeholder="enter your email"
+  />
+  <br /><br />
+
+  <input
+    type="text"
+    [(ngModel)]="formData.gender"
+    name="gender"
+    placeholder="gender"
+  />
+  <br /><br />
+  <input
+    type="text"
+    [(ngModel)]="formData.department"
+    name="department"
+    placeholder="enter your department"
+  />
+  <br /><br />
+  <input
+    type="text"
+    [(ngModel)]="formData.employeeID"
+    name="employeeId"
+    placeholder="enter your id"
+  />
+  <br /><br />
+  <button type="submit">Save User</button>
+</form>
+
+<p>component is loaded using lazy loading</p>
+<button (click)="onClick()">User</button>
+<!-- <button (click)="getAlluser()">ALLPOST-Hits the API</button> -->
+<ul *ngFor="let recipe of recipes">
+  <li>
+    {{ recipe.name | uppercase }}
+  </li>
+</ul>
