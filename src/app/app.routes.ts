@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: '', //only take the user selected path
     loadChildren: () =>
       import('./routing/routing.module').then((m) => m.RoutingModule),
   },

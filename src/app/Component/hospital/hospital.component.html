@@ -1,0 +1,47 @@
+<ul>
+  <li *ngFor="let re of response">
+    {{ re.body | hospitalpipe }}
+  </li>
+</ul>
+
+<!-- <h2>UserForm</h2>
+<form [formGroup]="userForm" (ngSubmit)="register(userForm)">
+  <div>
+    Name:<input
+      type="text"
+      placeholder="enter name "
+      formControlName="user.name"
+    />
+  </div>
+  <div>
+    EmployeeID:<input
+      type="text"
+      placeholder="enter empId"
+      formControlName="user.empId"
+    />
+  </div>
+  <div>
+    Mobile Number:<input
+      type="text"
+      placeholder="enter mobNo"
+      formControlName="user.mobNo"
+    />
+  </div>
+  <div>
+    Address:<input
+      type="text"
+      placeholder="enter address"
+      formControlName="user.address"
+    />
+  </div>
+  <div>
+    Department:<input
+      type="text"
+      placeholder="enter department"
+      formControlName="user.department"
+    />
+  </div>
+  <div>
+    <button type="submit" (click)="register(userForm)">Submit</button>
+  </div>
+</form> -->

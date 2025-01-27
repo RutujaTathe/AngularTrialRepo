@@ -37,3 +37,24 @@
     </div>
   </form>
 </div> -->
+
+<div *ngIf="isPresent">
+  <h2>Welcome ,{{ role }}</h2>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let role of roles">{{ role }}</li>
+  </ul>
+</div>
+
+<div [ngSwitch]="role">
+  <div *ngSwitchCase="'Admin'">
+    <h2>Welcome, Admin //using switch case</h2>
+  </div>
+  <div *ngSwitchCase="'user'">
+    <h2>Welcome, manager</h2>
+  </div>
+  <div *ngSwitchDefault>
+    <h2>Hi</h2>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SubscriptionService } from '../../Service/subscription.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { AdditionPipe } from '../../addition.pipe';
 
 @Component({
   selector: 'app-footer',

@@ -37,6 +37,6 @@ export class ReactiveformComponent {
   }
   register(Formdata: FormGroup) {
     // console.log(Formdata.value);
-    console.log(this.regForm.value);
+    console.log(this.regForm);
   }
 }

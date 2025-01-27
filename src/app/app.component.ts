@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { WelcomePipe } from './welcome.pipe';
 import { DemopipePipe } from './demopipe.pipe';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HopitalserviceService } from './Service/hopitalservice.service';
+import { HospitalComponent } from './Component/hospital/hospital.component';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +27,8 @@ import { FormsModule, NgForm } from '@angular/forms';
     WelcomePipe,
     DemopipePipe,
     FormsModule,
+    HospitalComponent,
+    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -42,4 +46,7 @@ export class AppComponent {
   // register(regdata: NgForm) {
   //   console.log(regdata.value);
   // }
+  role: String = 'Admin';
+  roles: String[] = ['Admin', 'Hr', 'Manager', 'Employee'];
+  isPresent: boolean = true;
 }

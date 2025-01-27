@@ -1,10 +1,11 @@
 import { CommonModule, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { AdditionPipe } from '../../addition.pipe';
 
 @Component({
   selector: 'app-pipecomponent',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,AdditionPipe],
   templateUrl: './pipecomponent.component.html',
   styleUrl: './pipecomponent.component.scss',
 })
@@ -20,6 +21,8 @@ export class PipecomponentComponent {
     department: 'DNA',
   };
 
+  num1: number = 30;
+  num2: number = 40;
   name:String="Radhika";
   isPresent:boolean=false;
   a:number[]= [1,2,3,4,5];
